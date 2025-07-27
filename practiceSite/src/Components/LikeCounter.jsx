@@ -1,14 +1,10 @@
 import { useState } from "react";
 import './LikeCounter.css'
 export default function LikeCounter(){
-    console.log("Component Rendered")
     let [isLiked,setLike]=useState(false);
     let [count,setCount]=useState(0);
     let handleLike=()=>{
-        setLike((isLiked)=>{
-            return !isLiked;
-        });
-        setLike((isLiked)=>{
+        setLike((isLiked)=>{ //using callback here now
             return !isLiked;
         });
         !isLiked ? setCount(count+1) : setCount(count-1); 

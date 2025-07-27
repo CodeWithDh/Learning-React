@@ -4,7 +4,7 @@ import Card from './Components/Card.jsx'
 import MessageBox from './Components/MessageBox.jsx';
 import ProductTab from './Components/ProductTab.jsx'
 import LikeCounter from './Components/LikeCounter.jsx'
-
+import LudoBoard from './Components/LudoBoard.jsx';
 function App() {
   return (
     <>
@@ -17,6 +17,7 @@ function App() {
      <Card count={count++} Title="Table" desc="This is Smart Phone" price="5000" More={{Brand:"Nokia",Sepcifications:"Snap-Dragon Processor"}} features={["Fast", "Durable" , "Brand - Nokia"]}  /> */}
      <ProductTab/>
      <LikeCounter/>
+     <LudoBoard/>
      </>
   )
 }
