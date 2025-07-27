@@ -1,0 +1,8 @@
+.likeDiv{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: antiquewhite;
+    width: 500px;
+    margin: 20px auto;
+}
