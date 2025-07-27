@@ -1,0 +1,38 @@
+.shopCard{
+    width:300px;
+    height: 400px;
+    background-color: #e4d175;
+    margin-left: 3px;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0.5rem;
+}
+.cardUpper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 85%;
+    border-radius: 1rem;
+    width:95%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.cardLower{
+    padding-left: 2rem;
+    width:60%;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-around; */
+    gap:1rem;
+    margin-top: 0.5rem;
+    align-items: center;
+}
+.oldPrice{
+    text-decoration: line-through;
+    color: #0000008c;
+    font-size: 1.2rem;
+}
+
