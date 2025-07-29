@@ -1,0 +1,21 @@
+{
+  "name": "advancenodejs",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "yes"
+  },
+  "license": "ISC",
+  "author": "Shivam Dhingra",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "node": "^20.19.4",
+    "nodemon": "^3.1.10",
+    "url": "^0.11.4"
+  }
+}

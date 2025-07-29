@@ -1,0 +1,93 @@
+/* Reset default styles */
+
+body {
+  background: linear-gradient(135deg, #8DD8FF, #4E71FF);
+}
+
+/* Main container */
+.todoList {
+    margin-left:30rem;
+    background-color: white;
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    }
+
+    /* Heading */
+    .todoList h2 {
+    color: #5409DA;
+    margin-bottom: 10px;
+    }
+
+    /* Input field */
+    .todoList input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #5409DA;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s ease;
+    }
+
+    .todoList input[type="text"]:focus {
+    border-color: #4E71FF;
+    }
+
+    /* Add button */
+    .todoList button {
+    padding: 10px 25px;
+    font-size: 16px;
+    background-color: #5409DA;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    }
+
+    .todoList button:hover {
+    background-color: #4E71FF;
+    }
+
+    /* Divider */
+    .todoList hr {
+    border: none;
+    height: 2px;
+    background-color: #BBFBFF;
+    /* margin: 20px 0; */
+    }
+
+    /* Task list heading */
+    .todoList h3 {
+    color: #333;
+    margin-bottom: 10px;
+    }
+
+    /* Task list */
+    .todoList ul {
+    list-style: none;
+    text-align: left;
+    max-height: 200px;
+    overflow-y: auto;
+    padding-right: 10px;
+    }
+
+    /* Task item */
+    .todoList ul li {
+    background-color: #f0f8ff;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+
+    .todoList ul li:hover {
+    background-color: #e0f0ff;
+    }
