@@ -1,2 +1,8 @@
 I am Learning NodeJS
  Content appended Successfully.28
+
+I need to Focus on DSA and Maths Logical Reasoning.
+
+DSA :-
+1. I will watch 2 videos of DSA series and implement those questions by my own.
+2. 2 leetCode questions solve
