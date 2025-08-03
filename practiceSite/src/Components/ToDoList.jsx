@@ -1,20 +1,34 @@
 import './ToDoList.css'
 import {useState} from 'react'
+import {v4 as uuid} from 'uuid';
 export default function ToDoList(){
     let [list,setList]=useState([])
     let [task,setTask]=useState("")
     let trackTask=(event)=>{
         setTask(event.target.value);
     }
-    console.log(list);
     let addTask=()=>{
         if(task.trim()==="") return;
-        setList([...list,task])
+        setList([...list,{id:uuid(),Task:task,isDone:false}])
         setTask("")
     }
-    let deleteTask=(removeIndex)=>{
+    let deleteTask=(removeId)=>{
         setList((list)=>{
-           return list.filter((_,index)=>index!==removeIndex)
+           return list.filter((tasks)=>tasks.id!==removeId)
+        })
+    }
+    let taskComplete=(id)=>{
+        setList((list)=>{
+            return list.map((tasks)=>{
+                if(tasks.id===id){
+                    return{
+                        ...tasks,
+                        isDone:true
+                    }
+                }else{
+                    return tasks
+                }
+            })
         })
     }
     return (
@@ -28,10 +42,12 @@ export default function ToDoList(){
         <hr />
         <h3>Task To do: </h3>
         <ul>
-            {list.map((task,index)=>{
+            {list.map((tasks,index)=>{
                 return(
-                    <li key={index}>{index+1}. {task} 
-                    <span>&nbsp;&nbsp;&nbsp;<button  onClick={()=>deleteTask(index)}>Delete</button></span>
+                    <li 
+                    key={tasks.id} 
+                    ><span style={{textDecoration: tasks.isDone?"line-through":"none"}}>{index+1}. {tasks.Task} </span>
+                    <span>&nbsp;&nbsp;&nbsp;<button  onClick={()=>deleteTask(tasks.id)}>Delete</button>&nbsp;&nbsp;&nbsp;<button  onClick={()=>taskComplete(tasks.id)}>Completed</button></span>
                     </li>
                     
                 ) 

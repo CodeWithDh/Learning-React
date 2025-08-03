@@ -1,0 +1,30 @@
+/* index.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html, #root {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+}
+
+button {
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4e71ff;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #395bcc;
+}
