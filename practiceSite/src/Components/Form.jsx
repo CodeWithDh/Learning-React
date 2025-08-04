@@ -10,7 +10,6 @@ export default function Form(){
             forEach((item of))
         })
         console.log(formArr[0].value);
-        
     }
     return(
         <div className="formComponent">
