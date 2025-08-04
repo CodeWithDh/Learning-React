@@ -1,24 +1,16 @@
 import {useState} from "react"
 import "./Form.css"
 export default function Form(){
-    let [formData,setFormData]=useState([{}])
-    console.log(formData)
-    let getData=(e)=>{
-        e.preventDefault();
-        let data=e.target.form;
-        let {name,username,remarks,rating}={
-            name:data[0].value,
-            username:data[1].value,
-            remarks:data[2].value,
-            rating:data[3].value,
-        };
-        setFormData(prev=>{
-            return [
-                ...prev,
-                {name,username,remarks,rating}
-            ]
+    let [formData,setFormData]=useState({})
+
+    let getData=(event)=>{
+        event.preventDefault();
+        let formArr=event.target.form
+        Object.keys(formData).forEach((key)=>{
+            forEach((item of))
         })
-        name="";
+        console.log(formArr[0].value);
+        
     }
     return(
         <div className="formComponent">
@@ -35,6 +27,7 @@ export default function Form(){
             <input 
             id="Name"
             placeholder="Name"
+            value={formData.name}
             style={{backgroundColor:"white",padding:"0.5rem",border:"none",width:"12rem",height:"2.2rem",borderRadius:"0.3rem",color:"Black",fontSize:"1rem"}}
             />
 
@@ -49,6 +42,7 @@ export default function Form(){
             <input 
             id="username"
             placeholder="Username"
+            value={formData.username}
             style={{backgroundColor:"white",padding:"0.5rem",border:"none",width:"12rem",height:"2.2rem",borderRadius:"0.3rem",color:"Black",fontSize:"1rem"}}
             />
 
@@ -58,9 +52,11 @@ export default function Form(){
             htmlFor="Remarks"
             style={{fontSize:"1.1rem",backgroundColor:"white",padding:"0.3rem",marginRight:"1rem"}}
             >Remarks :</label>
+
             <input 
             id="Remarks"
             placeholder="Give your Remarks..."
+            value={formData.remarks}
             style={{backgroundColor:"white",padding:"0.5rem",border:"none",width:"12rem",height:"2.2rem",borderRadius:"0.3rem",color:"Black",fontSize:"1rem"}}
             />
             <br /><br />
@@ -74,6 +70,7 @@ export default function Form(){
             min={1}
             id="Rating"
             placeholder="Rating"
+            value={formData.rating}
             style={{backgroundColor:"white",padding:"0.5rem",border:"none",width:"12rem",height:"2.2rem",borderRadius:"0.3rem",color:"Black",fontSize:"1rem"}}
             />
             <br /><br /><br />
