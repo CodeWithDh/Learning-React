@@ -1,80 +1,85 @@
-import {useState} from "react"
 import "./Form.css"
+import {useState} from "react"
 export default function Form(){
-    let [formData,setFormData]=useState({})
+    let[formData,setFormData]=useState({
+        username:"",
+        remarks:"",
+        rating:5,
+    })
+    let comment
+    const handleSubmit=(event)=>{
+        comment={
+            username:formData.username,
+            remarks:formData.remarks,
+            rating:formData.rating,
+        };
+        let isComment
+        if(comment.username===""){
+            let isComment=false
+        }else{
+            let isComment=true
+        }
 
-    let getData=(event)=>{
-        event.preventDefault();
-        let formArr=event.target.form
-        Object.keys(formData).forEach((key)=>{
-            forEach((item of))
+        setFormData({
+            username: "",
+            remarks: "",
+            rating: 5
         })
-        console.log(formArr[0].value);
+        event.preventDefault();
     }
-    return(
-        <div className="formComponent">
-        <h1>Form Component</h1>
-        <br /><br /><br /><br />
-        <form>
+    const trackInp=(event)=>{
+        setFormData((currData)=>{
+            return{
+                ...currData,
+                [event.target.name]:event.target.value
+            }
+        })
+    }
+    return (
+        <div>
+            <h2>Comments</h2>
+            <div className="comments">
+                {isComment?<div className="comment">
+                <h5>{comment.username}</h5>
+                <br />
+                <p>{comment.remarks}</p>
+                <br />
+                <span>{comment.rating}</span>
+            </div>:""}
+            </div>
             
-            <label 
-            htmlFor="Name"
-            style={{fontSize:"1.1rem",backgroundColor:"white",padding:"0.3rem",marginRight:"1rem"}}
-            >Name :
-            </label>
-
-            <input 
-            id="Name"
-            placeholder="Name"
-            value={formData.name}
-            style={{backgroundColor:"white",padding:"0.5rem",border:"none",width:"12rem",height:"2.2rem",borderRadius:"0.3rem",color:"Black",fontSize:"1rem"}}
-            />
-
-            <br /><br />
-
-            <label 
-            htmlFor="username"
-            style={{fontSize:"1.1rem",backgroundColor:"white",padding:"0.3rem",marginRight:"1rem"}}
-            >Username :
-            </label>
-
-            <input 
-            id="username"
-            placeholder="Username"
-            value={formData.username}
-            style={{backgroundColor:"white",padding:"0.5rem",border:"none",width:"12rem",height:"2.2rem",borderRadius:"0.3rem",color:"Black",fontSize:"1rem"}}
-            />
-
-            <br /><br />
-
-            <label 
-            htmlFor="Remarks"
-            style={{fontSize:"1.1rem",backgroundColor:"white",padding:"0.3rem",marginRight:"1rem"}}
-            >Remarks :</label>
-
-            <input 
-            id="Remarks"
-            placeholder="Give your Remarks..."
-            value={formData.remarks}
-            style={{backgroundColor:"white",padding:"0.5rem",border:"none",width:"12rem",height:"2.2rem",borderRadius:"0.3rem",color:"Black",fontSize:"1rem"}}
-            />
-            <br /><br />
-            <label 
-            htmlFor="Rating"
-            style={{fontSize:"1.1rem",backgroundColor:"white",padding:"0.3rem",marginRight:"1rem"}}
-            >Ratings :</label>
-            <input 
-            type="number"
-            max={5}
-            min={1}
-            id="Rating"
-            placeholder="Rating"
-            value={formData.rating}
-            style={{backgroundColor:"white",padding:"0.5rem",border:"none",width:"12rem",height:"2.2rem",borderRadius:"0.3rem",color:"Black",fontSize:"1rem"}}
-            />
-            <br /><br /><br />
-            <button  type="submit" onClick={(event)=>getData(event)}>Submit</button>
-        </form>
+            <form>
+                <label htmlFor="0">Username: </label>
+                <input 
+                 type="text" 
+                 name="username" 
+                 id="username"
+                 value={formData.username}
+                 onChange={trackInp} 
+                 />
+                <br /><br />
+                <label htmlFor="remarks">Remarks: </label>
+                <input 
+                type="text" 
+                name="remarks" 
+                id="remarks"
+                value={formData.remarks}
+                onChange={trackInp} 
+                />
+                <br /><br />
+                <label htmlFor="rating">Ratings: </label>
+                <input 
+                type="number" 
+                min={1}
+                max={5}
+                name="rating" 
+                id="rating"
+                value={formData.rating}
+                onChange={trackInp}  
+                />
+                <br /><br />
+                <button onClick={handleSubmit}>Submit</button>
+            </form>
         </div>
-    )
+    );
 }
