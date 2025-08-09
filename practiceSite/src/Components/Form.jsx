@@ -6,20 +6,23 @@ export default function Form(){
         remarks:"",
         rating:5,
     })
-    let comment
+    let[comments,setComments]=useState([{
+            username:"beinggg_shivam",
+            remarks:"Too Good",
+            rating:5,
+    }])
     const handleSubmit=(event)=>{
-        comment={
-            username:formData.username,
-            remarks:formData.remarks,
-            rating:formData.rating,
-        };
-        let isComment
-        if(comment.username===""){
-            let isComment=false
-        }else{
-            let isComment=true
-        }
-
+        setComments((currData)=>{
+            return [
+                ...currData,
+                {
+                    username:formData.username,
+                    remarks:formData.remarks,
+                    rating:formData.rating
+                }
+            ]
+        })
+        
         setFormData({
             username: "",
             remarks: "",
@@ -39,21 +42,26 @@ export default function Form(){
         <div>
             <h2>Comments</h2>
             <div className="comments">
-                {isComment?<div className="comment">
-                <h5>{comment.username}</h5>
-                <br />
-                <p>{comment.remarks}</p>
-                <br />
-                <span>{comment.rating}</span>
-            </div>:""}
+                {comments.map((comment,index) => {
+                    return <div className="comment" key={index}>
+                        
+                        <h5><span>{index+1}. </span> {comment.username}</h5>
+                        <br />
+                        <p>{comment.remarks}</p>
+                        <br />
+                        <span>{comment.rating}</span>
+                    </div>
+                    
+                })}
             </div>
             
             <form>
-                <label htmlFor="0">Username: </label>
+                <label htmlFor="username">Username: </label>
                 <input 
                  type="text" 
                  name="username" 
                  id="username"
+                 autoComplete="username"
                  value={formData.username}
                  onChange={trackInp} 
                  />

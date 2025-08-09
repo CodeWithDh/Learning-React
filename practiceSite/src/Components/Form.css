@@ -3,3 +3,31 @@
     background-color: #f0f0f0;
     text-align: center;
 }
+
+.comments{
+    width:100%;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: row;
+    border:0.01rem solid black;
+    border-radius: 1rem;
+}
+
+.comment{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    background-color:cornsilk;
+    min-width: 200px;
+    min-height: 150px;
+    max-width: 300px;
+    max-height: 250px;
+    justify-content: center;
+    padding: 1rem 2rem;
+    border: 0.01rem solid black;
+    border-radius: 1rem;
+    margin:1rem 1rem;
+    overflow: hidden;
+    
+}
