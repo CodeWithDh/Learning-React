@@ -18,11 +18,11 @@ function App() {
      <Card count={count++} Title="Laptop" desc="This is Smart Phone" price="3000" More={{Brand:"Nokia",Sepcifications:"Snap-Dragon Processor"}} features={["Fast", "Durable" , "Brand - Nokia"]}  />
      <Card count={count++} Title="fridge" desc="This is Smart Phone" price="100000" More={{Brand:"Nokia",Sepcifications:"Snap-Dragon Processor"}} features={["Fast", "Durable" , "Brand - Nokia"]}  />
      <Card count={count++} Title="Table" desc="This is Smart Phone" price="5000" More={{Brand:"Nokia",Sepcifications:"Snap-Dragon Processor"}} features={["Fast", "Durable" , "Brand - Nokia"]}  /> */}
-     {/* <ProductTab/> */}
-     {/* <LikeCounter/> */}
-     {/* <LudoBoard/> */}
-     {/* <ToDoList/> */}
-     {/* <LotteryGame /> */}
+     <ProductTab/>
+     <LikeCounter/>
+     <LudoBoard/>
+     <ToDoList/>
+     <LotteryGame />
      <Form/>
      </>
   )
