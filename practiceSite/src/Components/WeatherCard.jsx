@@ -17,10 +17,10 @@ export default function WeatherCard({cityInfo}){
         </Typography>
         <h4>{cityInfo.condition} : {cityInfo.feels_like} </h4><br />
         <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-          Description : {cityInfo.description} <br />
-          Temperature : {cityInfo.temp} <br />
-          Minimum Temperature : {cityInfo.tempMin} <br />
-          Maximum Temperature : {cityInfo.tempMax} <br />
+          <p>Description : {cityInfo.description} </p>
+          <p>Temperature : {cityInfo.temp}</p>
+          <p>Minimum Temperature : {cityInfo.tempMin}</p>
+          <p>Maximum Temperature : {cityInfo.tempMax}</p>
         </Typography>
       </CardContent>
     </Card>

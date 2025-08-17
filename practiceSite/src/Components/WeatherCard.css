@@ -2,3 +2,18 @@
     margin: 2rem;
     color:darkorchid;
 }
+@keyframes slideIn{
+    from {
+        tranform:translateY(-20px);
+        opacity: 0;
+    }
+    to{
+        tranform:translateY(0);
+        opacity:1;
+    }
+}
+
+
+p{
+    animation: slideIn 1s ease-in ;
+}

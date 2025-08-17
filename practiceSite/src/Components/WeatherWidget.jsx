@@ -6,6 +6,7 @@ import WeatherCard from "./WeatherCard.jsx"
 export default function WeatherWidget(){
 
     let[city,setCity]=useState("")
+    let [error,setError]=useState(false);
     let[cityInfo,setCityInfo]=useState(null)
 
     let weather_url="https://api.openweathermap.org/data/2.5/weather"
@@ -24,10 +25,11 @@ export default function WeatherWidget(){
                 condition:jsonRes.weather[0].main,
                 description:jsonRes.weather[0].description,
             }
+            setError(false)
             return  cityInfo;
         }catch(err){
-            console.log("API Error: ",err);
-        }
+            throw err;
+        };
     }
 
     const handleChange=(event)=>{
@@ -35,16 +37,22 @@ export default function WeatherWidget(){
     }
 
     const handleSubmit=async(event)=>{
-        event.preventDefault();
-        let res=await getWeather();
-        setCityInfo(res)
-        setCity("");
+        try{
+            event.preventDefault();
+            let res=await getWeather();
+            setCityInfo(res)
+            setCity("");
+        }catch(err){
+            setError(true);
+        }
     }
 
 
     return(
         <>
         <div className="WeatherWidget">
+          <form action="/submit">
+
             <h2>Find Weather Report</h2>
             <TextField 
             className="searchBar" 
@@ -54,6 +62,7 @@ export default function WeatherWidget(){
             value={city}
             onChange={handleChange}
             />
+
             <Button 
             style={{margin:"0.35rem 2rem"}} 
             variant='contained' 
@@ -62,6 +71,8 @@ export default function WeatherWidget(){
             onClick={handleSubmit}>
                 Search
             </Button>
+            {error?<p style={{color:"red"}}>This place does'nt exists! </p>:null}
+          </form>
         </div>
         {cityInfo?<WeatherCard cityInfo={cityInfo} />: null }
         </>
