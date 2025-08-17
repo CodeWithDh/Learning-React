@@ -2,9 +2,11 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import "./WeatherWidget.css"
 import {useState, useEffect} from "react"
+import WeatherCard from "./WeatherCard.jsx"
 export default function WeatherWidget(){
 
     let[city,setCity]=useState("")
+    let[cityInfo,setCityInfo]=useState(null)
 
     let weather_url="https://api.openweathermap.org/data/2.5/weather"
     let  api_key="13928736b0ee82ffc0022a048444d184";
@@ -14,6 +16,7 @@ export default function WeatherWidget(){
             let res=await fetch(`${weather_url}?q=${city}&appid=${api_key}&units=metric`);
             let jsonRes=await res.json();
             let cityInfo={
+                cityName:city,
                 feels_like:jsonRes.main.feels_like,
                 temp:jsonRes.main.temp,
                 tempMin:jsonRes.main.temp_min,
@@ -33,8 +36,8 @@ export default function WeatherWidget(){
 
     const handleSubmit=async(event)=>{
         event.preventDefault();
-        let cityInfo=await getWeather();
-        console.log(cityInfo);
+        let res=await getWeather();
+        setCityInfo(res)
         setCity("");
     }
 
@@ -60,6 +63,7 @@ export default function WeatherWidget(){
                 Search
             </Button>
         </div>
+        {cityInfo?<WeatherCard cityInfo={cityInfo} />: null }
         </>
     )
 }
