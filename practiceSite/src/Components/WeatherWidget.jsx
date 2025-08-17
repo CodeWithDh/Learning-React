@@ -1,7 +1,7 @@
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import "./WeatherWidget.css"
-import {useState, useEffect} from "react"
+import {useState} from "react"
 import WeatherCard from "./WeatherCard.jsx"
 export default function WeatherWidget(){
 
