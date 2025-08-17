@@ -9,6 +9,7 @@ import ToDoList from './Components/ToDoList.jsx';
 import LotteryGame from './Components/LotteryGame.jsx'
 import Form from "./Components/Form.jsx"
 import EffectCounter from "./Components/EffectCounter.jsx"
+import MaterialUi from "./Components/MaterialUi.jsx"
 function App() {
   return (
     <>
@@ -25,7 +26,8 @@ function App() {
      {/* <ToDoList/> */}
      {/* <LotteryGame /> */}
      {/* <Form/> */}
-     <EffectCounter/>
+     {/* <EffectCounter/> */}
+     <MaterialUi/>
      </>
   )
 }
