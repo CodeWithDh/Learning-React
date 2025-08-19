@@ -2,7 +2,6 @@ import './ToDoList.css'
 import {useState} from 'react'
 import {v4 as uuid} from 'uuid';
 
-import OuterDiv from "./OuterDiv"
 
 export default function ToDoList(){
 

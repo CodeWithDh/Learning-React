@@ -11,6 +11,8 @@ import Form from "./Components/Form.jsx"
 import EffectCounter from "./Components/EffectCounter.jsx"
 import MaterialUi from "./Components/MaterialUi.jsx"
 import WeatherWidget from "./Components/WeatherWidget.jsx"
+import Counter from './Components/Counter.jsx';
+
 function App() {
   return (
     <>
@@ -24,12 +26,14 @@ function App() {
      {/* <ProductTab/> */}
      {/* <LikeCounter/> */}
      {/* <LudoBoard/> */}
-     <ToDoList/>
+     {/* <ToDoList/> */}
      {/* <LotteryGame /> */}
      {/* <Form/> */}
      {/* <EffectCounter/> */}
      {/* <MaterialUi/> */}
      {/* <WeatherWidget/> */}
+
+     <Counter/>
      </>
   )
 }
