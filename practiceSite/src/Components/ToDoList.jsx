@@ -1,17 +1,24 @@
 import './ToDoList.css'
 import {useState} from 'react'
 import {v4 as uuid} from 'uuid';
+
+import OuterDiv from "./OuterDiv"
+
 export default function ToDoList(){
+
     let [list,setList]=useState([])
     let [task,setTask]=useState("")
+
     let trackTask=(event)=>{
         setTask(event.target.value);
     }
+
     let addTask=()=>{
         if(task.trim()==="") return;
         setList([...list,{id:uuid(),Task:task,isDone:false}])
         setTask("")
     }
+    
     let deleteTask=(removeId)=>{
         setList((list)=>{
            return list.filter((tasks)=>tasks.id!==removeId)
@@ -32,7 +39,8 @@ export default function ToDoList(){
         })
     }
     return (
-       <div className="todoList">
+        <>
+        <div className="todoList">
         <h2>To Do List</h2>
         <hr />
         <input onChange={trackTask} value={task} type="text" placeholder="Enter Tasks..." onKeyDown={(e)=>{if(e.key==='Enter'){addTask()}}} />
@@ -49,11 +57,16 @@ export default function ToDoList(){
                     ><span style={{textDecoration: tasks.isDone?"line-through":"none"}}>{index+1}. {tasks.Task} </span>
                     <span>&nbsp;&nbsp;&nbsp;<button  onClick={()=>deleteTask(tasks.id)}>Delete</button>&nbsp;&nbsp;&nbsp;<button  onClick={()=>taskComplete(tasks.id)}>Completed</button></span>
                     </li>
-                    
                 ) 
             })}
         </ul>
 
        </div>
+       <br />
+       <hr />
+       <br />
+       <OuterDiv list={list} setList={setList}/>
+        </>
+       
     )
 }

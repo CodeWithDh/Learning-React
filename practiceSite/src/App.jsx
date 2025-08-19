@@ -24,12 +24,12 @@ function App() {
      {/* <ProductTab/> */}
      {/* <LikeCounter/> */}
      {/* <LudoBoard/> */}
-     {/* <ToDoList/> */}
+     <ToDoList/>
      {/* <LotteryGame /> */}
      {/* <Form/> */}
      {/* <EffectCounter/> */}
      {/* <MaterialUi/> */}
-     <WeatherWidget/>
+     {/* <WeatherWidget/> */}
      </>
   )
 }
