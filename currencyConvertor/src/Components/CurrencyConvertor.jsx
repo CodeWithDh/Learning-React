@@ -47,12 +47,7 @@ export function CurrencyConvertor(){
             amountIsDisabled={true}
             currencies={Object.keys(data)} />
             
-            <button
-            className="text-white font-medium p-2 rounded-md px-6 bg-blue-600"
-            onClick={(e)=>{
-                Convertor(fromAmount,fromCurrency,toCurrency,data)
-            }}
-            >Convert {fromCurrency} to {toCurrency}</button>
+            
         </div>
         </>
     )
