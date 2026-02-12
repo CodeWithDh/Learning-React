@@ -52,7 +52,7 @@ export function CurrencyConvertor(){
             onClick={(e)=>{
                 Convertor(fromAmount,fromCurrency,toCurrency,data)
             }}
-            >Convert {fromCurrency} to {toCurrency}</button>
+            >
         </div>
         </>
     )
